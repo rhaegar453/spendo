@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="59" viewBox="0 0 30 59">
+    <defs>
+        <filter id="a" width="126.7%" height="113.6%" x="-13.3%" y="-6.8%" filterUnits="objectBoundingBox">
+            <feOffset dx="-1" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation=".5"/>
+            <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0.0980392157 0 0 0 0 0.164705882 0 0 0 0 0.274509804 0 0 0 0.12 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <linearGradient id="c" x1="32.651%" x2="66.316%" y1="97.275%" y2="16.253%">
+            <stop offset="0%" stop-color="#E4DEF8"/>
+            <stop offset="100%" stop-color="#E793F7"/>
+            <stop offset="100%" stop-color="#E994F7"/>
+        </linearGradient>
+        <path id="b" d="M12.887 8.597L1.851 29.568a2.4 2.4 0 0 0 2.124 3.518h5.753c1.16 0 2.1.94 2.1 2.1v13.296a2.4 2.4 0 0 0 4.518 1.13l11.291-21.168a2.4 2.4 0 0 0-2.117-3.53H19.51a2.1 2.1 0 0 1-2.1-2.1v-13.1a2.4 2.4 0 0 0-4.524-1.117z"/>
+        <linearGradient id="d" x1="30.722%" x2="82.49%" y1="0%" y2="135.287%">
+            <stop offset="0%" stop-color="#ECECEC"/>
+            <stop offset="100%" stop-color="#E994F7"/>
+        </linearGradient>
+        <linearGradient id="f" x1="37.513%" x2="76.581%" y1="118.863%" y2="-5.746%">
+            <stop offset="0%" stop-color="#EAF3F2"/>
+            <stop offset="100%" stop-color="#E994F7"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd" filter="url(#a)">
+        <mask id="e" fill="#fff">
+            <use xlink:href="#b"/>
+        </mask>
+        <use fill="url(#c)" xlink:href="#b"/>
+        <ellipse cx="8.34" cy="13.41" fill="url(#d)" mask="url(#e)" rx="21.18" ry="34.11"/>
+        <ellipse cx="6.24" cy="5.91" fill="url(#f)" mask="url(#e)" rx="13.62" ry="23.07"/>
+    </g>
+</svg>
