@@ -4,6 +4,7 @@
 body{
   font-family: 'Open';
   font-family: 'Open Sans', sans-serif;
+
 }
 .App-logo {
   height: 40vmin;
@@ -20,6 +21,33 @@ body{
   color: white;
 }
 
+
 .App-link {
   color: #09d3ac;
+}
+
+
+.sidenav{
+  height: 100pc;
+  background-color: #7755fe;
+}
+
+html, body{
+  height: 100%;
+}
+.smallItemLine{
+  height: 1px;
+  background-color: #d8d8d8;
+  margin-left: 5px;
+}
+.smallItemFont{
+color: white;
+margin-bottom: 5px;
+margin-left: 5px;
+}
+
+@media only screen and (max-width:768px){
+  .sidenav{
+    display: none;
+  }
 }
