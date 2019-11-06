@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import Navbar from './Components/Navbar';
+import MainCard from './Components/MainCard';
+import Slider from './Components/Sliders';
 
 export default class App extends React.Component{
   constructor(props){
@@ -11,6 +13,7 @@ export default class App extends React.Component{
     return (
       <div>
         <Navbar/>
+        <MainCard/>  
       </div>
     );
   }

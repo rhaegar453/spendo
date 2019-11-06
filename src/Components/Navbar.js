@@ -3,6 +3,7 @@ import './style.css';
 import LightLogo from '../Assets/logo.svg';
 
 
+
 const Navbar = () => {
     return (
         <nav class="navbar navbar-light accent">
