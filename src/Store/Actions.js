@@ -8,3 +8,4 @@ export const makeRequestSuccess=(data)=>({type:actions.MAKE_REQUEST_SUCCESS, pay
 export const makeRequestFailure=(err)=>({type:actions.MAKE_REQUEST_FAIL, payload:err});
 
 
+export const selectItem=(item)=>({type:actions.SELECT_ITEM, payload:item});
