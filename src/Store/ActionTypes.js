@@ -4,6 +4,7 @@ export const MAKE_REQUEST_FAIL='MAKE_REQUEST_FAIL';
 
 export const SELECT_ITEM='SELECT_ITEM';
 
+export const CHECK_CACHE='CHECK_CACHE';
 
 
 

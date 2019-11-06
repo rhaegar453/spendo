@@ -5,13 +5,19 @@ import MainCard from './Components/MainCard';
 import Slider from './Components/Sliders';
 import Sidebar from './Components/Sidebar';
 import SideItem from './Components/SideItem';
+import {connect} from 'react-redux';
+import {checkCache} from './Store/Actions';
 
-export default class App extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state={
       items:[1,2,3]
     }
+  }
+  componentDidMount(){
+    console.log("Making the request");
+    this.props.checkCache({amount:508, numMonths:8});
   }
 
   render() {
@@ -34,3 +40,18 @@ export default class App extends React.Component {
     );
   }
 }
+
+
+const mapStateToProps=(state)=>{
+  return {
+
+  }
+}
+
+const mapDispatchToProps=(dispatch)=>{
+  return {
+    checkCache:({amount, numMonths})=>dispatch(checkCache({amount, numMonths}))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

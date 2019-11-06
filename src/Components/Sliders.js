@@ -3,6 +3,7 @@ import Slider from 'react-rangeslider';
 import '../../node_modules/react-rangeslider/lib/index.css';
 
 
+
 export default class Sliders extends React.Component{
     constructor(props){
         super(props);
