@@ -7,5 +7,10 @@ export const SELECT_ITEM='SELECT_ITEM';
 export const CHECK_CACHE='CHECK_CACHE';
 
 
+export const CHANGE_LOAN='CHANGE_LOAN';
+export const CHANGE_DURATION='CHANGE_DURATION';
+
+
+
 
 

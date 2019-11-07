@@ -1,30 +1,32 @@
-import React from  'react';
-import Slider from 'react-rangeslider';
-import '../../node_modules/react-rangeslider/lib/index.css';
+import React from 'react';
+import Slider from './Slider';
 
-
-
-export default class Sliders extends React.Component{
-    constructor(props){
+class Sliders extends React.Component {
+    constructor(props) {
         super(props);
-        let {min, max}=this.props;
-        this.state={
-            labels:{
-                [min]:min,
-                [max]:max
-            }, 
-            value:null
-        }
     }
-    changeSlider=(value)=>{
-        this.setState({value});
-    }
-    render(){
-        let {min, max, step}=this.props;
-        return(
-            <div>
-                <Slider step={step} min={min} max={max} value={this.state.value} labels={this.state.labels} onChange={this.changeSlider}/>
+
+    render() {
+        return (
+            <div className="centeredCss" >
+                <div style={{width:'200px'}}>
+                    <div style={{ marginTop:'20px' }}>
+                        <h5 className="centeredCss">
+                            Loan Amount ($)
+                        </h5>
+                        <Slider min={500} max={5000} step={1000} type="loan" />
+                    </div>
+                    <div style={{ marginTop:'80px' }}>
+                        <h5 className="centeredCss">
+                            Duration (Months)
+                        </h5>
+                        <Slider min={6} max={12} step={1} type="duration" />
+                    </div>
+                </div>
             </div>
+
         );
     }
 }
+
+export default Sliders;
