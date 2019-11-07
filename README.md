@@ -1,68 +1,29 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Spendo
 
-## Available Scripts
+![](./Documentation/Untitled-1b2b56c8-2515-4163-91be-31724aa83b0c.png)
 
-In the project directory, you can run:
+# Libraries Used
 
-### `npm start`
+- Bootstrap
+- React
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Store
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- Redux
 
-### `npm test`
+# Caching Mechanism
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ For the purpose of caching, I have used the following approach. 
 
-### `npm run build`
+As and when the user changes the slider, it triggers an action to check if the amount and month combination exist in the localStorage. 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If the combination exists in the localStorage, we do not make a request to the server to fetch the details and get the details from the cache. To intercept every request I have created a custom middleware which intercepts the actions of the type CHANGE_LOAN and CHANGE_DURATION which include payloads with the respective values for the new loan and duration respectively. I then check if the combination is present in the localStorage which looks like this.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+![](./Documentation/Untitled-7c67fda5-ab03-4ae0-80d0-08d68455c215.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+If the combination is not present in the cache, I make a call to the server to fetch the data. On completion of the request, the amount and duration combination is then added to localstorage as the key and the details as the value. 
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Screenshot
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+![](./Documentation/Untitled-fe66ed2a-9f08-4c08-aaaf-07a58f161c78.png)
