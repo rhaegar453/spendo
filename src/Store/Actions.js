@@ -13,7 +13,11 @@ export const makeRequestSuccess = (data, req) => {
 
 export const makeRequestFailure = (err) => ({ type: actions.MAKE_REQUEST_FAIL, payload: err });
 
-export const selectItem = (item) => ({ type: actions.SELECT_ITEM, payload: item });
+export const selectItem = (item) => {
+    console.log("Selecting the item");
+    console.log(item);
+    return{ type: actions.SELECT_ITEM, payload: item }
+};
 
 export const makeRequest = ({ amount, numMonths }) => {
     return dispatch => {

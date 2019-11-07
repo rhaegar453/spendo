@@ -55,7 +55,7 @@ a:focus {
     width: 100%;
 }
 
-#sidebar {
+#sidebar{
     width: 250px;
     position: fixed;
     top: 0;
@@ -180,6 +180,5 @@ a.article:hover {
         width: calc(100% - 250px);
     }
     #sidebarCollapse span {
-        display: none;
     }
 }
