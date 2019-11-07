@@ -3,6 +3,7 @@ import './sidenav.css';
 import './style.css';
 import Sliders from './Sliders';
 import ResultRectangle from './ResultRectangle';
+import { connect } from 'react-redux';
 
 
 class Sidenav extends React.Component {
@@ -78,14 +79,27 @@ class Sidenav extends React.Component {
                             </button>
                         </div>
                     </nav>
-                    <Sliders/>
-                    <div className="centeredCss" style={{marginTop:"40px"}}> 
-                    <ResultRectangle/>
-                    </div>
+                    <Sliders />
+                    {console.log(this.props.selectedItem)}
+                    {this.props.selectedItem ? <div className="centeredCss" style={{ marginTop: "40px" }}>
+                        <ResultRectangle interest={this.props.selectedItem.interestRate} duration={this.props.selectedItem.numMonths} montlyPayment={this.props.selectedItem.monthlyPayment.amount} />
+                    </div>:<div className="centeredCss" style={{marginTop:"40px"}}>
+                        Please select the loan amount and duration
+                        </div>}
                 </div>
             </div>
         );
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        selectedItem: state.selectedItem
+    }
+}
 
-export default Sidenav;
+const mapDispatchToProps = (dispatch) => {
+    return {}
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Sidenav);
